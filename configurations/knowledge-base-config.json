@@ -1,0 +1,17 @@
+{
+  "knowledgeBaseName": "Internal-Knowledge-Assistant",
+  "roleArn": "arn:aws:iam::XXXXXXX:role/service-role/AmazonBedrockExecutionRoleForKnowledgeBase",
+  "storageConfiguration": {
+    "type": "OPENSEARCH_SERVERLESS",
+    "opensearchServerlessConfiguration": {
+      "collectionArn": "arn:aws:is-east-1:XXXXXXX:collection/bedrock-kb-vector-store",
+      "vectorIndexName": "bedrock-knowledge-base-default-index"
+    }
+  },
+  "knowledgeBaseConfiguration": {
+    "type": "VECTOR",
+    "vectorKnowledgeBaseConfiguration": {
+      "embeddingModelArn": "arn:aws:bedrock:us-east-1::foundation-model/amazon.titan-embed-text-v2:0"
+    }
+  }
+}
