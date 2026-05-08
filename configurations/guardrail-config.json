@@ -1,0 +1,21 @@
+{
+  "guardrailName": "Corporate-Safety-Filter",
+  "contentPolicyConfig": {
+    "filtersConfig": [
+      { "type": "HATE", "inputStrength": "HIGH", "outputStrength": "HIGH" },
+      { "type": "INSULTS", "inputStrength": "HIGH", "outputStrength": "HIGH" }
+    ]
+  },
+  "sensitiveInformationPolicyConfig": {
+    "piiEntitiesConfig": [
+      { "type": "EMAIL", "action": "BLOCK" },
+      { "type": "PHONE", "action": "BLOCK" }
+    ]
+  },
+  "contextualGroundingPolicyConfig": {
+    "filtersConfig": [
+      { "type": "GROUNDING", "threshold": 0.7 },
+      { "type": "RELEVANCE", "threshold": 0.7 }
+    ]
+  }
+}
