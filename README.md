@@ -28,7 +28,7 @@ Inference: Amazon Nova Micro is utilised for response generation due to its opti
 
 Security Layer: All inputs and outputs are filtered through Amazon Bedrock Guardrails.
 
-graph LR
+graph LR:
     User -->|Query| Bedrock[Amazon Bedrock]
     Bedrock -->|Enforce Policy| Guardrails[Guardrails]
     Bedrock -->|Retrieve Context| OS[OpenSearch Serverless]
