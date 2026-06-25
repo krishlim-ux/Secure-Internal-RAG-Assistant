@@ -36,11 +36,12 @@ graph LR:
     Nova -->|Cited Answer| Guardrails
     Guardrails -->|Filtered Answer| User
 
-    S3[(S3 Bucket)] -->|Sync| BKB[Amazon Bedrock Knowledge Base]
+S3[(S3 Bucket)] -->|Sync| BKB[Amazon Bedrock Knowledge Base]
     BKB -->|Generate Vectors| Titan[Titan Embeddings V2]
     Titan -->|Store Embeddings| OS[OpenSearch Serverless]
     OS -->|Ranked Chunks| Nova
 
+    
 # Technical Resolution: Service Quota Optimisation
 
 During the implementation phase, the data synchronisation process encountered a 429 ThrottlingException. Investigation revealed that the default service quota for Amazon Titan Text Embeddings V2 on-demand inference requests was set to 0 in the target regions.
